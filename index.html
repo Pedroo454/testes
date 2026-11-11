@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +17,12 @@
     
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         brandRed: '#dc2626',
-                        brandYellow: '#facc15',
-                        brandDark: '#0a0a0c',
-                        brandCard: '#121215',
-                        brandSurface: '#18181c',
+                        brandYellow: '#eab308',
                     }
                 }
             }
@@ -32,7 +30,6 @@
     </script>
 
     <style>
-        /* Animação de pulso para o botão flutuante do WhatsApp */
         @keyframes pulse-glow {
             0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
             50% { box-shadow: 0 0 0 16px rgba(34, 197, 94, 0); }
@@ -42,7 +39,8 @@
         }
     </style>
 </head>
-<body class="bg-brandDark text-gray-100 font-sans selection:bg-brandYellow selection:text-black">
+<!-- PADRÃO BRANCO (LIGHT MODE) POR PADRÃO -->
+<body class="bg-slate-50 text-slate-800 dark:bg-[#0a0a0c] dark:text-gray-100 font-sans selection:bg-brandYellow selection:text-black transition-colors duration-300">
 
     <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/551146368473?text=Olá!%20Encontrei%20vocês%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento." 
@@ -54,34 +52,34 @@
     </a>
 
     <!-- Top Notice Bar -->
-    <div class="bg-zinc-950 text-gray-300 border-b border-zinc-800/80 text-xs font-semibold py-2.5 px-4 text-center flex justify-between items-center max-w-7xl mx-auto rounded-b-xl hidden sm:flex">
+    <div class="bg-slate-900 text-slate-200 dark:bg-zinc-950 dark:text-gray-300 border-b border-slate-800 text-xs font-semibold py-2.5 px-4 text-center flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto rounded-b-xl gap-2 sm:gap-0">
         <span><i class="fa-solid fa-location-dot text-brandYellow mr-1.5"></i> Av. Nove de Julho, 913 - Vila das Acácias, Poá - SP</span>
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-4 flex-wrap justify-center">
             <a href="https://www.instagram.com/auto_center_nove_de_julho/" target="_blank" rel="noopener noreferrer" class="hover:text-brandYellow transition flex items-center gap-1.5">
                 <i class="fa-brands fa-instagram text-brandYellow"></i> @auto_center_nove_de_julho
             </a>
-            <span class="text-gray-400">|</span>
+            <span class="hidden sm:inline text-gray-500">|</span>
             <span><i class="fa-solid fa-phone text-brandYellow mr-1.5"></i> (11) 4636-8473</span>
         </div>
     </div>
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 left-0 w-full z-40 bg-brandDark/90 backdrop-blur-xl border-b border-zinc-800/80 shadow-2xl">
+    <header class="sticky top-0 left-0 w-full z-40 bg-white/90 dark:bg-brandDark/90 backdrop-blur-xl border-b border-slate-200 dark:border-zinc-800/80 shadow-sm transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Logo Real -->
-            <a href="#inicio" class="flex items-center gap-3.5 group">
+            <a href="#inicio" class="flex items-center gap-3 group">
                 <img src="https://scontent.fgru6-1.fna.fbcdn.net/v/t39.30808-1/406906436_847627354034402_7122622868727013571_n.jpg?stp=dst-jpg_tt6&cstp=mx588x588&ctp=s200x200&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=6t84J8dTg3oQ7kNvwGGSebI&_nc_oc=Adq7CGfaDjMvTfGt51BAfmYzQ05JDNnfpPKggqtL_yt2zTLdMz6NCMTD6tk6pRM1pDeQthdWAA_bKX-3-kgpZRtu&_nc_zt=24&_nc_ht=scontent.fgru6-1.fna&_nc_gid=v7Y_u0lJKQ8xaG566rVLiA&_nc_ss=7b289&oh=00_AQRnIrEwaPy_9VkWyYgouiM9NoeR5MTBMFH7kfpJdWVbTg&oe=6AF9B307" 
                      alt="Auto Center Nove de Julho Logo" 
-                     class="w-12 h-12 rounded-full border-2 border-brandYellow object-cover shadow-lg group-hover:scale-105 transition">
+                     class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 border-brandYellow object-cover shadow-md group-hover:scale-105 transition">
                 <div>
-                    <span class="text-lg font-black tracking-wider uppercase text-white block leading-tight">Auto Center</span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-brandYellow">Nove de Julho</span>
+                    <span class="text-base sm:text-lg font-black tracking-wider uppercase text-slate-900 dark:text-white block leading-tight">Auto Center</span>
+                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-brandYellow">Nove de Julho</span>
                 </div>
             </a>
 
             <!-- Navegação Desktop -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-300">
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600 dark:text-gray-300">
                 <a href="#inicio" class="hover:text-brandYellow transition">Início</a>
                 <a href="#servicos" class="hover:text-brandYellow transition">Serviços</a>
                 <a href="#orcamento" class="hover:text-brandYellow transition">Orçamento</a>
@@ -89,69 +87,74 @@
                 <a href="#localizacao" class="hover:text-brandYellow transition">Como Chegar</a>
             </nav>
 
-            <!-- Botão WhatsApp CTA -->
-            <div class="hidden sm:block">
-                <a href="https://wa.me/551146368473?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="bg-brandYellow hover:bg-yellow-400 text-black px-6 py-2.5 rounded-xl font-black text-sm transition shadow-lg shadow-yellow-500/20 flex items-center gap-2 border border-yellow-300/40">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> Agendar Agora
+            <!-- Ações Direta (WhatsApp + Botão Tema) -->
+            <div class="flex items-center gap-3">
+                <!-- Botão Alternar Tema (Dark / Light) -->
+                <button onclick="toggleTheme()" id="theme-toggle-btn" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 flex items-center justify-center text-slate-700 dark:text-yellow-400 hover:scale-105 transition shadow-sm" aria-label="Alternar Tema">
+                    <i class="fa-solid fa-moon dark:hidden text-base"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline text-base"></i>
+                </button>
+
+                <a href="https://wa.me/551146368473?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="hidden sm:flex bg-brandYellow hover:bg-yellow-500 text-black px-5 py-2.5 rounded-xl font-black text-sm transition shadow-md items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Agendar
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section Principal -->
-    <section id="inicio" class="relative pt-16 pb-20 md:pt-28 md:pb-32 overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-brandDark">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#facc15_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <section id="inicio" class="relative pt-12 pb-16 md:pt-24 md:pb-28 overflow-hidden bg-gradient-to-b from-white via-slate-100 to-slate-50 dark:from-black dark:via-zinc-950 dark:to-[#0a0a0c]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                 
-                <div class="lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="inline-flex items-center gap-2 bg-brandYellow/10 border border-brandYellow/30 px-4 py-1.5 rounded-full text-brandYellow text-xs font-extrabold uppercase tracking-widest mb-6 shadow-sm">
-                        <i class="fa-solid fa-shield-halved"></i> Referência em Mecânica Automotiva em Poá - SP
+                <div class="lg:col-span-7 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1.5 rounded-full text-amber-700 dark:text-brandYellow text-xs font-extrabold uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-shield-halved"></i> Referência em Mecânica em Poá - SP
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight">
-                        Manutenção Automotiva de Alta <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandYellow to-yellow-200">Precisão & Confiança</span>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight text-slate-900 dark:text-white">
+                        Manutenção Automotiva de Alta <span class="text-amber-600 dark:text-brandYellow">Precisão & Confiança</span>
                     </h1>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed max-w-2xl font-normal">
-                        Diagnóstico computadorizado, revisão geral de motores, suspensão, freios e injeção eletrônica. Cuidamos do seu veículo com equipamentos modernos, transparência e agilidade.
+                    <p class="text-slate-600 dark:text-gray-300 text-base sm:text-lg mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Diagnóstico computadorizado, revisão geral de motores, suspensão, freios e injeção eletrônica. Cuidamos do seu veículo com equipamentos modernos e total transparência.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                        <a href="https://wa.me/551146368473?text=Olá!%20Quero%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="bg-brandYellow hover:bg-yellow-400 text-black px-8 py-4 rounded-xl font-black text-center transition shadow-2xl shadow-yellow-500/20 flex items-center justify-center gap-3 text-base">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+                        <a href="https://wa.me/551146368473?text=Olá!%20Quero%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="bg-brandYellow hover:bg-yellow-500 text-black px-7 py-4 rounded-xl font-black text-center transition shadow-xl flex items-center justify-center gap-3 text-base">
                             <i class="fa-brands fa-whatsapp text-2xl"></i> Orçamento Instantâneo
                         </a>
-                        <a href="#localizacao" class="bg-zinc-900 hover:bg-zinc-800 text-gray-200 border border-zinc-700 px-8 py-4 rounded-xl font-bold text-center transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-route text-brandYellow"></i> Como Chegar
+                        <a href="#localizacao" class="bg-white dark:bg-zinc-900 hover:bg-slate-200 dark:hover:bg-zinc-800 text-slate-800 dark:text-gray-200 border border-slate-300 dark:border-zinc-700 px-7 py-4 rounded-xl font-bold text-center transition flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-route text-amber-600 dark:text-brandYellow"></i> Como Chegar
                         </a>
                     </div>
 
-                    <!-- Métricas de Confiança Premium -->
-                    <div class="grid grid-cols-3 gap-6 border-t border-zinc-800/80 pt-8">
-                        <div class="bg-brandCard/60 p-4 rounded-2xl border border-zinc-800/60 backdrop-blur-sm">
-                            <span class="text-2xl sm:text-3xl font-black text-brandYellow">100%</span>
-                            <p class="text-xs text-gray-400 font-semibold mt-1">Peças Qualificadas</p>
+                    <!-- Métricas de Confiança -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6 border-t border-slate-200 dark:border-zinc-800 pt-6">
+                        <div class="bg-white dark:bg-zinc-900/60 p-3 sm:p-4 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+                            <span class="text-xl sm:text-3xl font-black text-amber-600 dark:text-brandYellow">100%</span>
+                            <p class="text-[11px] sm:text-xs text-slate-500 dark:text-gray-400 font-semibold mt-1">Peças Qualificadas</p>
                         </div>
-                        <div class="bg-brandCard/60 p-4 rounded-2xl border border-zinc-800/60 backdrop-blur-sm">
-                            <span class="text-2xl sm:text-3xl font-black text-white">Poá - SP</span>
-                            <p class="text-xs text-gray-400 font-semibold mt-1">Localização Central</p>
+                        <div class="bg-white dark:bg-zinc-900/60 p-3 sm:p-4 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+                            <span class="text-xl sm:text-3xl font-black text-slate-900 dark:text-white">Poá - SP</span>
+                            <p class="text-[11px] sm:text-xs text-slate-500 dark:text-gray-400 font-semibold mt-1">Localização Central</p>
                         </div>
-                        <div class="bg-brandCard/60 p-4 rounded-2xl border border-zinc-800/60 backdrop-blur-sm">
-                            <span class="text-2xl sm:text-3xl font-black text-brandYellow">Garantia</span>
-                            <p class="text-xs text-gray-400 font-semibold mt-1">Em Todos os Serviços</p>
+                        <div class="bg-white dark:bg-zinc-900/60 p-3 sm:p-4 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+                            <span class="text-xl sm:text-3xl font-black text-amber-600 dark:text-brandYellow">Garantia</span>
+                            <p class="text-[11px] sm:text-xs text-slate-500 dark:text-gray-400 font-semibold mt-1">Em Todos os Serviços</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card Principal de Destaque -->
                 <div class="lg:col-span-5" data-aos="fade-left" data-aos-duration="1000">
-                    <div class="relative rounded-3xl overflow-hidden border-2 border-brandYellow/40 bg-brandCard p-3 shadow-2xl shadow-yellow-500/5">
+                    <div class="relative rounded-3xl overflow-hidden border-2 border-brandYellow/40 bg-white dark:bg-zinc-900 p-2 sm:p-3 shadow-2xl">
                         <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SyO7dMS9RmCfeX51SDHlgZgrNkOvd8OauV8FX_9TfxXsL1wRgViAvK4e9SlvNSimCYVMBpZN41gSBQohTDIGR4Ydd9DbbgvExnRLjtnvf3iU-BB4nqd0eRF1A9lVJcApInJEB0X3C9S_4V=s680-w680-h510-rw" 
                              alt="Fachada e Estrutura da Oficina Auto Center Nove de Julho" 
-                             class="w-full h-[440px] object-cover rounded-2xl">
-                        <div class="absolute bottom-6 left-6 right-6 bg-brandDark/90 backdrop-blur-md p-4 rounded-2xl border border-zinc-700/80 shadow-2xl flex items-center gap-3.5">
-                            <img src="https://scontent.fgru6-1.fna.fbcdn.net/v/t39.30808-1/406906436_847627354034402_7122622868727013571_n.jpg?stp=dst-jpg_tt6&cstp=mx588x588&ctp=s200x200&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=6t84J8dTg3oQ7kNvwGGSebI&_nc_oc=Adq7CGfaDjMvTfGt51BAfmYzQ05JDNnfpPKggqtL_yt2zTLdMz6NCMTD6tk6pRM1pDeQthdWAA_bKX-3-kgpZRtu&_nc_zt=24&_nc_ht=scontent.fgru6-1.fna&_nc_gid=v7Y_u0lJKQ8xaG566rVLiA&_nc_ss=7b289&oh=00_AQRnIrEwaPy_9VkWyYgouiM9NoeR5MTBMFH7kfpJdWVbTg&oe=6AF9B307" class="w-11 h-11 rounded-full border-2 border-brandYellow object-cover">
+                             class="w-full h-[350px] sm:h-[420px] object-cover rounded-2xl">
+                        <div class="absolute bottom-5 left-5 right-5 bg-white/95 dark:bg-brandDark/95 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200 dark:border-zinc-700 shadow-xl flex items-center gap-3">
+                            <img src="https://scontent.fgru6-1.fna.fbcdn.net/v/t39.30808-1/406906436_847627354034402_7122622868727013571_n.jpg?stp=dst-jpg_tt6&cstp=mx588x588&ctp=s200x200&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=6t84J8dTg3oQ7kNvwGGSebI&_nc_oc=Adq7CGfaDjMvTfGt51BAfmYzQ05JDNnfpPKggqtL_yt2zTLdMz6NCMTD6tk6pRM1pDeQthdWAA_bKX-3-kgpZRtu&_nc_zt=24&_nc_ht=scontent.fgru6-1.fna&_nc_gid=v7Y_u0lJKQ8xaG566rVLiA&_nc_ss=7b289&oh=00_AQRnIrEwaPy_9VkWyYgouiM9NoeR5MTBMFH7kfpJdWVbTg&oe=6AF9B307" class="w-10 h-10 rounded-full border-2 border-brandYellow object-cover">
                             <div>
-                                <p class="text-xs font-bold text-white">Nossa Estrutura em Poá</p>
-                                <p class="text-[11px] text-brandYellow font-semibold">Equipamentos de Última Geração</p>
+                                <p class="text-xs font-bold text-slate-900 dark:text-white">Nossa Estrutura em Poá</p>
+                                <p class="text-[10px] text-amber-600 dark:text-brandYellow font-bold">Equipamentos Modernos</p>
                             </div>
                         </div>
                     </div>
@@ -162,63 +165,63 @@
     </section>
 
     <!-- Grid de Serviços Especializados -->
-    <section id="servicos" class="py-24 bg-zinc-950 border-t border-zinc-900">
+    <section id="servicos" class="py-20 bg-slate-100 dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-brandYellow font-bold text-xs uppercase tracking-widest bg-brandYellow/10 px-3 py-1 rounded-full border border-brandYellow/20">Especialidades</span>
-                <h2 class="text-3xl sm:text-4xl font-black mt-3 text-white">Serviços Automotivos <span class="text-brandYellow">Especializados</span></h2>
-                <p class="text-gray-400 mt-4 text-base">Manutenção preventiva e corretiva com tecnologia de ponta para todas as marcas e modelos.</p>
+                <span class="text-amber-700 dark:text-brandYellow font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Especialidades</span>
+                <h2 class="text-3xl sm:text-4xl font-black mt-3 text-slate-900 dark:text-white">Serviços Automotivos <span class="text-amber-600 dark:text-brandYellow">Especializados</span></h2>
+                <p class="text-slate-600 dark:text-gray-400 mt-3 text-sm sm:text-base">Manutenção preventiva e corretiva com tecnologia de ponta para o seu veículo.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Serviço 1 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="bg-brandCard border border-zinc-800/80 rounded-2xl overflow-hidden hover:border-brandYellow transition duration-500 group shadow-xl">
-                    <div class="h-56 overflow-hidden relative">
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-brandYellow transition duration-500 group shadow-lg">
+                    <div class="h-52 overflow-hidden relative">
                         <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QqkWxsyX7wlSvs0SNeiO38IE_v4h4aQ5Ril1piYiIsAlnjT_OcEfIQMJjHB5NkvuMWfacl5yCBSS7rTQ1FS_unTdMkQ4CZF6mrjp2TO2fj1cae5QePBOt7xQthGMUpaLs3jd1Ju93T04g=s680-w680-h510-rw" 
                              alt="Mecânica Geral e Motor" 
                              class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute top-4 left-4 bg-brandYellow text-black text-xs font-black px-3 py-1 rounded-lg uppercase shadow-md">Essencial</div>
+                        <div class="absolute top-4 left-4 bg-brandYellow text-black text-xs font-black px-3 py-1 rounded-lg uppercase shadow">Essencial</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brandYellow transition">Mecânica Geral & Motor</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Revisão de cabeçotes, correia dentada, troca de óleo, embreagem e manutenção preventiva completa do motor.</p>
-                        <a href="https://wa.me/551146368473?text=Quero%20saber%20mais%20sobre%20Mecânica%20Geral" target="_blank" rel="noopener noreferrer" class="text-brandYellow text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition">
-                            Consultar Valor no WhatsApp <i class="fa-solid fa-arrow-right text-xs"></i>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-brandYellow transition">Mecânica Geral & Motor</h3>
+                        <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Revisão de cabeçotes, correia dentada, troca de óleo, embreagem e manutenção preventiva completa.</p>
+                        <a href="https://wa.me/551146368473?text=Quero%20saber%20mais%20sobre%20Mecânica%20Geral" target="_blank" rel="noopener noreferrer" class="text-amber-600 dark:text-brandYellow text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition">
+                            Consultar no WhatsApp <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Serviço 2 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="bg-brandCard border border-zinc-800/80 rounded-2xl overflow-hidden hover:border-brandYellow transition duration-500 group shadow-xl">
-                    <div class="h-56 overflow-hidden relative">
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-brandYellow transition duration-500 group shadow-lg">
+                    <div class="h-52 overflow-hidden relative">
                         <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SXF3JG3rE3SjgePa1ZXSqoEihgJNG6e1GowPJUbZ-a4CYl316Oiibjkzmm7RLnYfP_NeAGXixkboF9P3WjljLYZ7PAv5m3PfCJj4brXNYbVKMHj91YE69B5oo2h7YmSJ4oCveY=s680-w680-h510-rw" 
                              alt="Injeção Eletrônica" 
                              class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute top-4 left-4 bg-brandYellow text-black text-xs font-black px-3 py-1 rounded-lg uppercase shadow-md">Tecnologia</div>
+                        <div class="absolute top-4 left-4 bg-brandYellow text-black text-xs font-black px-3 py-1 rounded-lg uppercase shadow">Tecnologia</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brandYellow transition">Injeção Eletrônica & Scanner</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Mapeamento computadorizado de falhas, limpeza de bicos injetores, reprogramação e ajuste de sensores.</p>
-                        <a href="https://wa.me/551146368473?text=Quero%20saber%20mais%20sobre%20Injeção%20Eletrônica" target="_blank" rel="noopener noreferrer" class="text-brandYellow text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition">
-                            Consultar Valor no WhatsApp <i class="fa-solid fa-arrow-right text-xs"></i>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-brandYellow transition">Injeção Eletrônica & Scanner</h3>
+                        <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Mapeamento computadorizado de falhas, limpeza de bicos injetores, reprogramação e ajuste de sensores.</p>
+                        <a href="https://wa.me/551146368473?text=Quero%20saber%20mais%20sobre%20Injeção%20Eletrônica" target="_blank" rel="noopener noreferrer" class="text-amber-600 dark:text-brandYellow text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition">
+                            Consultar no WhatsApp <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Serviço 3 -->
-                <div data-aos="fade-up" data-aos-delay="300" class="bg-brandCard border border-zinc-800/80 rounded-2xl overflow-hidden hover:border-brandYellow transition duration-500 group shadow-xl">
-                    <div class="h-56 overflow-hidden relative">
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-brandYellow transition duration-500 group shadow-lg">
+                    <div class="h-52 overflow-hidden relative">
                         <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tz3-NFt6wgRpQNpG63MMA1ivbE392EgJfO3-aVdEyV7I9MRKWeqmAm-fswt4A5hRjLuYf6GruhGGGHirmC92JxQ5_imDnYedNqojh1HOjvg9daGoltri2v0qQUgosgNjSN8LhC=s680-w680-h510-rw" 
                              alt="Freios e Suspensão" 
                              class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute top-4 left-4 bg-brandYellow text-black text-xs font-black px-3 py-1 rounded-lg uppercase shadow-md">Segurança</div>
+                        <div class="absolute top-4 left-4 bg-brandYellow text-black text-xs font-black px-3 py-1 rounded-lg uppercase shadow">Segurança</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brandYellow transition">Freios & Suspensão</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Substituição de pastilhas, discos, fluido de freio, amortecedores, molas, buchas e pivôs para rodar com total segurança.</p>
-                        <a href="https://wa.me/551146368473?text=Quero%20saber%20mais%20sobre%20Freios%20e%20Suspensão" target="_blank" rel="noopener noreferrer" class="text-brandYellow text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition">
-                            Consultar Valor no WhatsApp <i class="fa-solid fa-arrow-right text-xs"></i>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-brandYellow transition">Freios & Suspensão</h3>
+                        <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Substituição de pastilhas, discos, fluido de freio, amortecedores, molas e buchas para rodar com total segurança.</p>
+                        <a href="https://wa.me/551146368473?text=Quero%20saber%20mais%20sobre%20Freios%20e%20Suspensão" target="_blank" rel="noopener noreferrer" class="text-amber-600 dark:text-brandYellow text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition">
+                            Consultar no WhatsApp <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
@@ -228,35 +231,35 @@
     </section>
 
     <!-- Formulário Interativo de Orçamento -->
-    <section id="orcamento" class="py-20 bg-brandDark border-y border-zinc-800/80">
+    <section id="orcamento" class="py-20 bg-white dark:bg-[#0a0a0c] border-y border-slate-200 dark:border-zinc-800 transition-colors duration-300">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-brandSurface p-8 sm:p-12 rounded-3xl border border-zinc-800 shadow-2xl relative overflow-hidden" data-aos="zoom-in">
+            <div class="bg-slate-50 dark:bg-zinc-900 p-6 sm:p-12 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-xl" data-aos="zoom-in">
                 <div class="text-center mb-8">
-                    <span class="text-brandYellow font-bold text-xs uppercase tracking-widest">Atendimento Direto</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-white mt-2">Simule seu Orçamento pelo WhatsApp</h2>
-                    <p class="text-gray-400 text-sm mt-2">Preencha os dados do seu veículo e receba nosso retorno rápido.</p>
+                    <span class="text-amber-700 dark:text-brandYellow font-bold text-xs uppercase tracking-widest">Atendimento Direto</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-2">Simule seu Orçamento pelo WhatsApp</h2>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm mt-2">Preencha os dados do seu veículo e receba nosso retorno rápido.</p>
                 </div>
                 <form onsubmit="sendToWhatsApp(event)" class="space-y-4">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Seu Nome</label>
-                            <input type="text" id="name" required placeholder="Digite seu nome" class="w-full bg-brandCard border border-zinc-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brandYellow text-sm transition">
+                            <label class="block text-xs font-bold text-slate-700 dark:text-gray-300 uppercase mb-2">Seu Nome</label>
+                            <input type="text" id="name" required placeholder="Digite seu nome" class="w-full bg-white dark:bg-zinc-950 border border-slate-300 dark:border-zinc-800 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:border-brandYellow text-sm transition">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Modelo do Carro e Ano</label>
-                            <input type="text" id="car" required placeholder="Ex: Gol 1.6 - 2018" class="w-full bg-brandCard border border-zinc-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brandYellow text-sm transition">
+                            <label class="block text-xs font-bold text-slate-700 dark:text-gray-300 uppercase mb-2">Modelo do Carro e Ano</label>
+                            <input type="text" id="car" required placeholder="Ex: Gol 1.6 - 2018" class="w-full bg-white dark:bg-zinc-950 border border-slate-300 dark:border-zinc-800 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:border-brandYellow text-sm transition">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Serviço Necessário</label>
-                        <select id="service" class="w-full bg-brandCard border border-zinc-800 rounded-xl px-4 py-3.5 text-gray-300 focus:outline-none focus:border-brandYellow text-sm transition">
+                        <label class="block text-xs font-bold text-slate-700 dark:text-gray-300 uppercase mb-2">Serviço Necessário</label>
+                        <select id="service" class="w-full bg-white dark:bg-zinc-950 border border-slate-300 dark:border-zinc-800 rounded-xl px-4 py-3 text-slate-800 dark:text-gray-300 focus:outline-none focus:border-brandYellow text-sm transition">
                             <option value="Revisão Geral / Troca de Óleo">Revisão Geral / Troca de Óleo</option>
                             <option value="Freios ou Suspensão">Freios ou Suspensão</option>
                             <option value="Injeção Eletrônica / Scanner">Injeção Eletrônica / Scanner</option>
                             <option value="Diagnóstico de Barulhos">Diagnóstico de Barulhos ou Falhas</option>
                         </select>
                     </div>
-                    <button type="submit" class="w-full bg-brandYellow hover:bg-yellow-400 text-black font-black py-4 rounded-xl transition shadow-xl flex items-center justify-center gap-2 text-base">
+                    <button type="submit" class="w-full bg-brandYellow hover:bg-yellow-500 text-black font-black py-4 rounded-xl transition shadow-lg flex items-center justify-center gap-2 text-base">
                         <i class="fa-brands fa-whatsapp text-xl"></i> Enviar Mensagem no WhatsApp
                     </button>
                 </form>
@@ -264,71 +267,71 @@
         </div>
     </section>
 
-    <!-- SEÇÃO PREMIUM DE LOCALIZAÇÃO E MAPA -->
-    <section id="localizacao" class="py-24 bg-zinc-950 border-b border-zinc-900">
+    <!-- SEÇÃO DE LOCALIZAÇÃO E MAPA -->
+    <section id="localizacao" class="py-20 bg-slate-100 dark:bg-zinc-950 border-b border-slate-200 dark:border-zinc-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-brandYellow font-bold text-xs uppercase tracking-widest bg-brandYellow/10 px-3 py-1 rounded-full border border-brandYellow/20">Fácil Acesso</span>
-                <h2 class="text-3xl sm:text-4xl font-black mt-3 text-white">Nossa Localização em <span class="text-brandYellow">Poá - SP</span></h2>
-                <p class="text-gray-400 mt-3">Venha nos visitar na principal avenida da cidade ou Trace sua rota diretamente pelo seu aplicativo favorito.</p>
+                <span class="text-amber-700 dark:text-brandYellow font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Fácil Acesso</span>
+                <h2 class="text-3xl sm:text-4xl font-black mt-3 text-slate-900 dark:text-white">Nossa Localização em <span class="text-amber-600 dark:text-brandYellow">Poá - SP</span></h2>
+                <p class="text-slate-600 dark:text-gray-400 mt-3 text-sm sm:text-base">Venha nos visitar na principal avenida da cidade ou trace sua rota pelo GPS.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                 
                 <!-- Informações e Botões de Rota -->
-                <div class="lg:col-span-5 bg-brandCard border border-zinc-800/80 p-8 rounded-3xl flex flex-col justify-between shadow-2xl" data-aos="fade-right">
+                <div class="lg:col-span-5 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-xl" data-aos="fade-right">
                     <div>
                         <div class="flex items-center gap-3 mb-6">
-                            <div class="w-12 h-12 rounded-2xl bg-brandYellow/10 border border-brandYellow/30 flex items-center justify-center text-brandYellow text-xl">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-brandYellow text-xl">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-white">Auto Center Nove de Julho</h3>
-                                <p class="text-xs text-gray-400">Oficina Mecânica Multimarcas</p>
+                                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Auto Center Nove de Julho</h3>
+                                <p class="text-xs text-slate-500 dark:text-gray-400">Oficina Mecânica Multimarcas</p>
                             </div>
                         </div>
 
-                        <div class="space-y-4 text-sm text-gray-300 mb-8">
+                        <div class="space-y-4 text-sm text-slate-600 dark:text-gray-300 mb-8">
                             <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-map-pin text-brandYellow mt-1"></i>
-                                <span><strong>Endereço:</strong> Av. Nove de Julho, 913 - Vila das Acácias, Poá - SP, CEP 08557-100</span>
+                                <i class="fa-solid fa-map-pin text-amber-600 dark:text-brandYellow mt-1"></i>
+                                <span><strong>Endereço:</strong> Av. Nove de Julho, 913 - Vila das Acácias, Poá - SP</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <i class="fa-solid fa-phone text-brandYellow"></i>
+                                <i class="fa-solid fa-phone text-amber-600 dark:text-brandYellow"></i>
                                 <span><strong>Telefone:</strong> (11) 4636-8473</span>
                             </div>
                             <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-clock text-brandYellow mt-1"></i>
-                                <span><strong>Horário:</strong> Segunda a Sexta: 08:00 às 18:00 | Sábados: 08:00 às 13:00</span>
+                                <i class="fa-solid fa-clock text-amber-600 dark:text-brandYellow mt-1"></i>
+                                <span><strong>Horário:</strong> Seg. a Sex. 08h às 18h | Sáb. 08h às 13h</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Botões de GPS (Google Maps e Waze) -->
-                    <div class="space-y-3 pt-6 border-t border-zinc-800">
-                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Abra a rota direto no celular:</p>
+                    <!-- Botões de GPS -->
+                    <div class="space-y-3 pt-6 border-t border-slate-200 dark:border-zinc-800">
+                        <p class="text-xs font-bold text-slate-500 dark:text-gray-400 uppercase tracking-wider mb-2">Abra a rota direto no celular:</p>
                         <a href="https://maps.google.com/?q=Av.+Nove+de+Julho,+913+-+Vila+das+Acácias,+Poá+-+SP" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-3 border border-zinc-700 text-sm">
-                            <i class="fa-brands fa-google text-emerald-400"></i> Abrir no Google Maps
+                           class="w-full bg-slate-200 dark:bg-zinc-800 hover:bg-slate-300 dark:hover:bg-zinc-700 text-slate-900 dark:text-white font-bold py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-3 border border-slate-300 dark:border-zinc-700 text-sm">
+                            <i class="fa-brands fa-google text-emerald-600"></i> Abrir no Google Maps
                         </a>
                         <a href="https://waze.com/ul?q=Av.+Nove+de+Julho,+913+Poa+SP" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-3 text-sm shadow-lg shadow-sky-600/20">
+                           class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-3 text-sm shadow">
                             <i class="fa-solid fa-diamond-turn-right"></i> Abrir no Waze
                         </a>
                     </div>
                 </div>
 
-                <!-- Mapa Embutido do Google Maps -->
-                <div class="lg:col-span-7 bg-brandCard border border-zinc-800/80 rounded-3xl overflow-hidden shadow-2xl min-h-[380px]" data-aos="fade-left">
+                <!-- Mapa Embutido -->
+                <div class="lg:col-span-7 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-3xl overflow-hidden shadow-xl min-h-[350px]" data-aos="fade-left">
                     <iframe 
                         title="Mapa de Localização Auto Center Nove de Julho"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.077678589139!2d-46.34789122376288!3d-23.529688460415397!2m3!1f0!0f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce7b0a7012345d%3A0x123456789abcdef!2sAv.%20Nove%20de%20Julho%2C%20913%20-%20Vila%20das%20Ac%C3%A1cias%2C%20Po%C3%A1%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
-                        class="w-full h-full min-h-[380px] border-0 filter grayscale invert contrast-125 opacity-90 hover:filter-none transition duration-500" 
+                        class="w-full h-full min-h-[350px] border-0" 
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
@@ -340,55 +343,55 @@
     </section>
 
     <!-- Depoimentos -->
-    <section id="avaliacoes" class="py-20 bg-brandDark">
+    <section id="avaliacoes" class="py-20 bg-white dark:bg-[#0a0a0c] transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div>
-                    <span class="text-brandYellow font-bold text-xs uppercase tracking-widest">Avaliações</span>
-                    <h2 class="text-3xl font-black text-white mt-2">O Que Nossos Clientes Dizem</h2>
+                    <span class="text-amber-700 dark:text-brandYellow font-bold text-xs uppercase tracking-widest">Avaliações</span>
+                    <h2 class="text-3xl font-black text-slate-900 dark:text-white mt-2">O Que Nossos Clientes Dizem</h2>
                 </div>
-                <a href="https://www.instagram.com/auto_center_nove_de_julho/" target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-0 text-brandYellow hover:underline text-sm font-bold flex items-center gap-2">
+                <a href="https://www.instagram.com/auto_center_nove_de_julho/" target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-0 text-amber-600 dark:text-brandYellow hover:underline text-sm font-bold flex items-center gap-2">
                     <i class="fa-brands fa-instagram text-lg"></i> Siga no Instagram <i class="fa-solid fa-arrow-right text-xs"></i>
                 </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-brandCard border border-zinc-800/80 p-6 rounded-2xl shadow-lg">
-                    <div class="flex text-brandYellow text-sm mb-4">
+                <div class="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-6 rounded-2xl shadow-sm">
+                    <div class="flex text-amber-500 dark:text-brandYellow text-sm mb-4">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-4">"Excelente atendimento! Resolveram o barulho na suspensão do meu carro rapidamente e o preço foi honesto. Recomendo em Poá!"</p>
-                    <span class="text-xs font-bold text-gray-400 block">— Marcos S., Cliente Local</span>
+                    <p class="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-4">"Excelente atendimento! Resolveram o barulho na suspensão do meu carro rapidamente e o preço foi justo. Recomendo em Poá!"</p>
+                    <span class="text-xs font-bold text-slate-500 dark:text-gray-400 block">— Marcos S., Cliente Local</span>
                 </div>
-                <div class="bg-brandCard border border-zinc-800/80 p-6 rounded-2xl shadow-lg">
-                    <div class="flex text-brandYellow text-sm mb-4">
+                <div class="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-6 rounded-2xl shadow-sm">
+                    <div class="flex text-amber-500 dark:text-brandYellow text-sm mb-4">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-4">"Oficina super organizada, profissionais atenciosos e diagnóstico transparente. Levo meus carros sempre na Nove de Julho."</p>
-                    <span class="text-xs font-bold text-gray-400 block">— Rogério A., Cliente</span>
+                    <p class="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-4">"Oficina super organizada, profissionais atenciosos e diagnóstico transparente. Levo meus carros sempre na Nove de Julho."</p>
+                    <span class="text-xs font-bold text-slate-500 dark:text-gray-400 block">— Rogério A., Cliente</span>
                 </div>
-                <div class="bg-brandCard border border-zinc-800/80 p-6 rounded-2xl shadow-lg">
-                    <div class="flex text-brandYellow text-sm mb-4">
+                <div class="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-6 rounded-2xl shadow-sm">
+                    <div class="flex text-amber-500 dark:text-brandYellow text-sm mb-4">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-4">"Passei o scanner no sistema de injeção e identificaram a falha de primeira. Atendimento via WhatsApp muito prático!"</p>
-                    <span class="text-xs font-bold text-gray-400 block">— Amanda L., Cliente</span>
+                    <p class="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-4">"Passei o scanner no sistema de injeção e identificaram a falha de primeira. Atendimento via WhatsApp muito prático!"</p>
+                    <span class="text-xs font-bold text-slate-500 dark:text-gray-400 block">— Amanda L., Cliente</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Rodapé Completo -->
-    <footer id="contato" class="bg-zinc-950 border-t border-zinc-800/80 py-16">
+    <footer class="bg-slate-900 text-slate-200 dark:bg-zinc-950 border-t border-slate-800 dark:border-zinc-900 py-16 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="https://scontent.fgru6-1.fna.fbcdn.net/v/t39.30808-1/406906436_847627354034402_7122622868727013571_n.jpg?stp=dst-jpg_tt6&cstp=mx588x588&ctp=s200x200&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=6t84J8dTg3oQ7kNvwGGSebI&_nc_oc=Adq7CGfaDjMvTfGt51BAfmYzQ05JDNnfpPKggqtL_yt2zTLdMz6NCMTD6tk6pRM1pDeQthdWAA_bKX-3-kgpZRtu&_nc_zt=24&_nc_ht=scontent.fgru6-1.fna&_nc_gid=v7Y_u0lJKQ8xaG566rVLiA&_nc_ss=7b289&oh=00_AQRnIrEwaPy_9VkWyYgouiM9NoeR5MTBMFH7kfpJdWVbTg&oe=6AF9B307" class="w-10 h-10 rounded-full border border-brandYellow">
+                        <img src="https://scontent.fgru6-1.fna.fbcdn.net/v/t39.30808-1/406906436_847627354034402_7122622868727013571_n.jpg?stp=dst-jpg_tt6&cstp=mx588x588&ctp=s200x200&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=6t84J8dTg3oQ7kNvwGGSebI&_nc_oc=Adq7CGfaDjMvTfGt51BAfmYzQ05JDNnfpPKggqtL_yt2zTLdMz6NCMTD6tk6pRM1pDeQthdWAA_bKX-3-kgpZRtu&_nc_zt=24&_nc_ht=scontent.fgru6-1.fna&_nc_gid=v7Y_u0lJKQ8xaG566rVLiA&_nc_ss=7b289&oh=00_AQRnIrEwaPy_9VkWyYgouiM9NoeR5MTBMFH7kfpJdWVbTg&oe=6AF9B307" class="w-10 h-10 rounded-full border border-brandYellow object-cover">
                         <span class="text-lg font-black text-white">Auto Center Nove de Julho</span>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4 max-w-sm">Manutenção mecânica preventiva e corretiva com qualidade, garantia e responsabilidade em Poá - SP.</p>
-                    <div class="flex gap-4 text-gray-400">
+                    <p class="text-slate-400 dark:text-gray-400 text-sm leading-relaxed mb-4 max-w-sm">Manutenção mecânica preventiva e corretiva com qualidade, garantia e responsabilidade em Poá - SP.</p>
+                    <div class="flex gap-4 text-slate-400 dark:text-gray-400">
                         <a href="https://www.instagram.com/auto_center_nove_de_julho/" target="_blank" rel="noopener noreferrer" class="hover:text-brandYellow text-xl transition"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.facebook.com/p/Auto-Center-Nove-de-Julho-100063614347955/" target="_blank" rel="noopener noreferrer" class="hover:text-brandYellow text-xl transition"><i class="fa-brands fa-facebook"></i></a>
                         <a href="https://wa.me/551146368473" target="_blank" rel="noopener noreferrer" class="hover:text-brandYellow text-xl transition"><i class="fa-brands fa-whatsapp"></i></a>
@@ -397,20 +400,20 @@
 
                 <div>
                     <h4 class="text-white font-bold text-sm uppercase mb-4 tracking-wider">Endereço & Contato</h4>
-                    <p class="text-gray-400 text-sm mb-2"><i class="fa-solid fa-location-dot text-brandYellow mr-2"></i> Av. Nove de Julho, 913</p>
-                    <p class="text-gray-400 text-sm mb-2">Vila das Acácias, Poá - SP</p>
-                    <p class="text-gray-400 text-sm mb-2"><i class="fa-solid fa-phone text-brandYellow mr-2"></i> (11) 4636-8473</p>
+                    <p class="text-slate-400 dark:text-gray-400 text-sm mb-2"><i class="fa-solid fa-location-dot text-brandYellow mr-2"></i> Av. Nove de Julho, 913</p>
+                    <p class="text-slate-400 dark:text-gray-400 text-sm mb-2">Vila das Acácias, Poá - SP</p>
+                    <p class="text-slate-400 dark:text-gray-400 text-sm mb-2"><i class="fa-solid fa-phone text-brandYellow mr-2"></i> (11) 4636-8473</p>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold text-sm uppercase mb-4 tracking-wider">Funcionamento</h4>
-                    <p class="text-gray-400 text-sm mb-2">Segunda a Sexta: 08:00 às 18:00</p>
-                    <p class="text-gray-400 text-sm mb-2">Sábado: 08:00 às 13:00</p>
+                    <p class="text-slate-400 dark:text-gray-400 text-sm mb-2">Segunda a Sexta: 08:00 às 18:00</p>
+                    <p class="text-slate-400 dark:text-gray-400 text-sm mb-2">Sábado: 08:00 às 13:00</p>
                     <p class="text-brandYellow text-xs font-bold mt-4">Atendimento rápido por agendamento</p>
                 </div>
             </div>
 
-            <div class="border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+            <div class="border-t border-slate-800 dark:border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-gray-500">
                 <p>&copy; Auto Center Nove de Julho. Todos os direitos reservados.</p>
                 <p class="mt-2 sm:mt-0">Desenvolvido com excelência por <span class="text-brandYellow font-bold">Gravith Studio</span></p>
             </div>
@@ -421,6 +424,18 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
+
+        // Função para alternar entre Modo Claro (Padrão) e Modo Escuro
+        function toggleTheme() {
+            const html = document.getElementById('html-root');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
 
         function sendToWhatsApp(e) {
             e.preventDefault();
